@@ -26,17 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         button.disabled = true;
 
-        weightFirst.style.top = '80px';
-        weightSecond.style.top = '80px';
+        weightFirst.style.top = '60px';
+        weightSecond.style.top = '60px';
 
         setTimeout(() => {
-            weightFirst.style.top = '130px';
-            weightSecond.style.top = '130px';
+            weightFirst.style.top = '180px';
+            weightSecond.style.top = '180px';
 
             setTimeout(() => {
                 button.disabled = false;
-            }, 200 / endurance);
-        }, 400 / endurance);
+            }, 1000 / endurance);
+        }, 900 / endurance);
     });
 
     upgradeStrengthButton.addEventListener('click', () => {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             score -= strengthCost;
             strength++;
             strengthLevel++;
-            strengthCost = Math.ceil(strengthCost * 1.18);
+            strengthCost = Math.ceil(strengthCost * 3);
             updateDisplay();
         }
     });
@@ -54,15 +54,13 @@ document.addEventListener('DOMContentLoaded', function () {
             score -= enduranceCost;
             endurance++;
             enduranceLevel++;
-            enduranceCost = Math.ceil(enduranceCost * 1.15);
+            enduranceCost = Math.ceil(enduranceCost * 3);
             updateDisplay();
         }
     });
 
     function updateDisplay() {
         scoreDisplay.textContent = `Очки: ${score}`;
-        strengthDisplay.textContent = strength;
-        enduranceDisplay.textContent = endurance;
         strengthLevelDisplay.textContent = strengthLevel;
         enduranceLevelDisplay.textContent = enduranceLevel;
         strengthCostDisplay.textContent = strengthCost;

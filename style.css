@@ -1,6 +1,6 @@
 body {
     background-image: url("/images/sportzal.jpg");
-    background-size: 70% auto;
+    background-size: 100% auto;
 }
 
 li {
@@ -14,40 +14,50 @@ li {
 }
 
 .score_table {
-    font-size: 62px;
+    font-size: 25px;
+    margin-top: 5px;
     color: red;
-    background-color: rgba(117, 190, 218, 0.5);
+
 }
 
 .container {
+
     text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: 50px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #weightlifter {
     position: relative;
-    width: 100px;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     background: url('images/weightlifter.png') no-repeat center center;
     background-size: contain;
 }
 
 .weight {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     background: url('images/weight.png') no-repeat center center;
     background-size: contain;
-    transition: top 0.2s;
+    transition: top 0.3s;
 }
 
 .weight-first {
     left: 5px;
-    top: 130px;
+    top: 200px;
 }
 
 .weight-second {
-    left: 60px;
-    top: 130px;
+    left: 120px;
+    top: 200px;
 }
 
 button {
@@ -59,48 +69,55 @@ button {
 .main {
     display: flex;
     justify-content: space-around;
-    height: 50vh;
+
     align-items: center;
     margin-top: 25vh;
 }
 
 .title_for_blocks {
+    font-weight: 600;
     color: white;
     text-align: center;
-    font-size: 28px;
+    font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    margin-top: 15px;
 }
 
 .skill-btn {
     border-radius: 30px;
+    font-size: 14px;
 }
+
 
 .skills-menu {
     color: white;
-    width: 280px;
-    height: 50vh;
+    width: 180px;
+    height: 30vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 10px;
     border: black solid 2px;
-    background-color: rgb(118, 109, 255);
+    background: rgba(23, 99, 0, 0.8);
+    border-radius: 30px;
 }
 
 .statistics {
     color: white;
-    width: 280px;
-    height: 50vh;
+    width: 180px;
+    height: 30vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 10px;
     border: black solid 2px;
-    background-color: rgb(133, 207, 81);
+    background: rgba(255, 153, 0, 0.8);
+    border-radius: 30px;
 }
 
+
+
 .statistics_list {
+    color: black;
     display: flex;
     flex-direction: column;
     font-size: 18px;
@@ -108,8 +125,3 @@ button {
 }
 
 .statistics-item {}
-
-#score {
-    margin-top: 20px;
-    font-size: 18px;
-}
