@@ -6,22 +6,32 @@ document.addEventListener('DOMContentLoaded', function () {
     let enduranceLevel = 1;
     let strengthCost = 15;
     let enduranceCost = 30;
+    let doubleClickPurchased = false;
+    let autoclickerPurchased = false;
+    let autoclickerInterval = null;
 
     const weightFirst = document.querySelector('.weight-first');
     const weightSecond = document.querySelector('.weight-second');
     const button = document.getElementById('clicker');
     const scoreDisplay = document.getElementById('score');
-    const strengthDisplay = document.getElementById('strength');
-    const enduranceDisplay = document.getElementById('endurance');
     const strengthLevelDisplay = document.getElementById('strength-level');
     const enduranceLevelDisplay = document.getElementById('endurance-level');
     const strengthCostDisplay = document.getElementById('strength-cost');
     const enduranceCostDisplay = document.getElementById('endurance-cost');
     const upgradeStrengthButton = document.getElementById('upgrade-strength');
     const upgradeEnduranceButton = document.getElementById('upgrade-endurance');
+    const doubleClickButton = document.getElementById('double-click');
+    const autoclickerButton = document.getElementById('autoclicker');
+    const titleDisplay = document.getElementById('titul');
+
+    const titles = ['Новичок', 'Специалист', 'Мастер', 'Эксперт', 'Легенда'];
 
     button.addEventListener('click', () => {
-        score += 10 * strength;
+        let pointsToAdd = 3 * strength;
+        if (doubleClickPurchased) {
+            pointsToAdd *= 2;
+        }
+        score += pointsToAdd;
         scoreDisplay.textContent = `Очки: ${score}`;
 
         button.disabled = true;
@@ -44,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             score -= strengthCost;
             strength++;
             strengthLevel++;
-            strengthCost = Math.ceil(strengthCost * 3);
+            strengthCost = Math.ceil(strengthCost * 4);
             updateDisplay();
         }
     });
@@ -54,10 +64,36 @@ document.addEventListener('DOMContentLoaded', function () {
             score -= enduranceCost;
             endurance++;
             enduranceLevel++;
-            enduranceCost = Math.ceil(enduranceCost * 3);
+            enduranceCost = Math.ceil(enduranceCost * 4);
             updateDisplay();
         }
     });
+
+    doubleClickButton.addEventListener('click', () => {
+        if (score >= 300 && !doubleClickPurchased) {
+            score -= 300;
+            doubleClickPurchased = true;
+            doubleClickButton.disabled = true;
+            updateDisplay();
+        }
+    });
+
+    autoclickerButton.addEventListener('click', () => {
+        if (score >= 500 && !autoclickerPurchased) {
+            score -= 500;
+            autoclickerPurchased = true;
+            autoclickerButton.disabled = true;
+            autoclickerInterval = setInterval(() => {
+                button.click();
+            }, 1000); // 
+            updateDisplay();
+        }
+    });
+    function updateTitle() {
+        const titleIndex = Math.floor(strengthLevel / 10);
+        const title = titles[Math.min(titleIndex, titles.length - 1)];
+        titleDisplay.textContent = title;
+    }
 
     function updateDisplay() {
         scoreDisplay.textContent = `Очки: ${score}`;
@@ -65,5 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
         enduranceLevelDisplay.textContent = enduranceLevel;
         strengthCostDisplay.textContent = strengthCost;
         enduranceCostDisplay.textContent = enduranceCost;
+        updateTitle();
     }
 });

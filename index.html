@@ -9,37 +9,49 @@
 </head>
 
 <body>
+    <header class="header">
+
+        <span class="header-title">Магазин</span>
+        <div>
+            <button class="header-item" id="double-click">Двойной клик <br />300 points</button>
+            <button class="header-item" id="autoclicker">Автокликер <br /> 500 points</button>
+        </div>
+
+
+    </header>
+
     <div class="main">
         <div class="skills-menu">
             <span class="title_for_blocks">Навыки</span>
             <div class="skills-list">
-                <span class="skill-item">
-                    <button class="skill-btn" id="upgrade-strength">Улучшить силу - <span
-                            id="strength-cost">15</span></button>
-                </span>
-                <span class="skill-item">
-                    <button class="skill-btn" id="upgrade-endurance">Улучшить выносливость - <span
-                            id="endurance-cost">30</span></button>
-                </span>
+                <span class="skill-item"><button class="skill-btn" id="upgrade-strength">Улучшить силу - <span
+                            id="strength-cost">15</span></button></span>
+                <span class="skill-item"><button class="skill-btn" id="upgrade-endurance">Улучшить выносливость - <span
+                            id="endurance-cost">30</span></button></span>
             </div>
         </div>
 
         <div class="container">
+            <div class="titul">
+                <span>Титул:</span>
+                <span id="titul">Новичок</span>
+            </div>
             <div id="weightlifter">
                 <div class="weight weight-first"></div>
                 <div class="weight weight-second"></div>
             </div>
-            <button class="clicker_btn" id="clicker">Click me!</button>
+            <button class="clicker_btn" id="clicker">Жим!</button>
             <div class="score_table" id="score">Очки: 0</div>
         </div>
 
         <div class="statistics">
             <span class="title_for_blocks">Статистика</span>
             <div class="statistics_list">
-                <span class="statistics-item">Уровень силы: <span id="strength-level">1</span></span>
-                <span class="statistics-item">Уровень выносливости: <span id="endurance-level">1</span></span>
+                <span class="statistics-item">Сила lvl: <span id="strength-level">1</span></span>
+                <span class="statistics-item">Выносливость lvl: <span id="endurance-level">1</span></span>
             </div>
         </div>
+
     </div>
     <script src="script.js"></script>
 </body>
