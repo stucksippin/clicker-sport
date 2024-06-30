@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+
+        <div class="skills-menu">
+            <span class="title_for_blocks">Навыки</span>
+            <div class="skills-list">
+
+
+                <span class="skill-item"><button class="skill-btn" id="upgrade-strength">Улучшить силу - <span
+                            id="strength-cost">15</span></button></span>
+                <span class="skill-item"><button class="skill-btn" id="upgrade-endurance">Улучшить выносливость - <span
+                            id="endurance-cost">30</span></button></span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="weightlifter">
+                <div class="weight weight-first"></div>
+                <div class="weight weight-second"></div>
+            </div>
+            <button class="clicker_btn" id="clicker">Click me!</button>
+            <div class="score_table" id="score">Очки: 0</div>
+        </div>
+
+        <div class="statistics">
+            <span class="title_for_blocks">Статистика</span>
+            <div class="statistics_list">
+                <span class="statistics-item">Сила: <span id="strength">1</span> (Уровень: <span
+                        id="strength-level">1</span>)
+                </span>
+                <span class="statistics-item">Выносливость: <span id="endurance">1</span> (Уровень: <span
+                        id="endurance-level">1</span>)</span>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
